@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.js"></script>
+        <title>Países y Temperaturas</title>
+    </head>
+
+    <body style="font-family: monospace;">
+        <header class="container">
+            <div class="row">
+                <h1 class="display-3 text-center">Países y Temperaturas</h1>
+            </div>
+            <div class="row">
+                <h1 class="display-5 text-center">Iván Gómez Calvo</h1>
+                <h1 class="display-5 text-center">1º BigData & IA</h1>            
+            </div>
+        </header>
+
+        <hr>
+
+        <main class="container-fluid row">
+            <article class="col-5">
+                <h4>Inserta un país para obtener su temperatura</h4>
+                <p>(solo vale con los nombres en inglés)</p>
+                
+                <form method="get" class="form-control py-3 d-flex flex-column gap-3">
+                    <label for="pais">País</label>
+                    <input type="text" name="pais" class="form-control" placeholder="Inserta el país">
+                    
+                    <input type="submit" value="Obtener temperatura" class="btn btn-primary col-4">
+                </form>
+            </article>
+
+            <article class="col-7">
+                <h4>Datos de {{ datos_pais["capital"] }} ({{ datos_pais["nombre"]}} )</h4>
+                <hr>
+                <ul>
+                    <li>Nombre del país: {{ datos_pais["nombre"] }}</li>
+                    <li>Capital: {{ datos_pais["capital"] }}</li>
+                    <li>Región: {{ datos_pais["region"] }}</li>
+                    <li>Temperatura: {{ datos_pais["temperatura"] }}</li>
+                    <li>Mínima: {{ datos_pais["minima"] }}</li>
+                    <li>Máxima: {{ datos_pais["maxima"] }}</li>
+                    <li>Hora del amanecer: {{ datos_pais["amanecer"] }}</li>
+                    <li>Hora del atardecer: {{ datos_pais["atardecer"] }}</li>
+                </ul>
+            </article>
+        </main>
+    </body>
+
+</html>
